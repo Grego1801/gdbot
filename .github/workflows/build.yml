@@ -3,19 +3,18 @@ name: Build MacroBot
 on: [push]
 
 jobs:
-  build-android:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Geode SDK
+      - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          target: android64
-          sdk: '3.0.0'
+          target: Android64
+          combine: true
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: MacroBot-android64
+          name: MacroBot
           path: build/*.geode
