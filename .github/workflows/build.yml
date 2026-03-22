@@ -1,0 +1,20 @@
+name: Build MacroBot
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Geode SDK
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          platform: android64
+          
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: MacroBot-android
+          path: build/*.geode
