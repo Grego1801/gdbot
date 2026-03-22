@@ -1,12 +1,15 @@
 {
     "geode": "3.0.0",
     "gd": {
-        "android": "2.2074"
+        "android": "2.2081",
+        "win": "*",
+        "mac": "*",
+        "ios": "*"
     },
     "id": "blackbox.macrobot",
     "name": "MacroBot",
     "version": "1.0.0",
     "developer": "Grunwald",
     "description": "Frame perfect macro replay",
-    "platforms": ["android32", "android64"]
+    "platforms": ["android64"]
 }
