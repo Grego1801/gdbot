@@ -84,7 +84,7 @@ bool loadMacro(const std::string& path) {
         pos++;
     }
     
-    log::info("Loaded {} inputs from {}", g_inputs.size(), path);
+    log::info("MacroBot: Loaded inputs");
     return true;
 }
 
@@ -104,10 +104,10 @@ class $modify(PlayLayer) {
             // Open touch device
             g_touchFd = open("/dev/input/event3", O_WRONLY);
             if (g_touchFd < 0) {
-                log::error("Cannot open touch device");
+                log::info("MacroBot: touch error");
                 g_playing = false;
             } else {
-                log::info("MacroBot: ready with {} inputs", g_inputs.size());
+                log::info("MacroBot: ready");
             }
         }
         
